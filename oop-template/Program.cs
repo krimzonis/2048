@@ -1,21 +1,29 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 
 namespace oop_template
 {
-    static class Program
+    public static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            DifficultySelectionForm difficultySelectionForm = new DifficultySelectionForm();
+            if (difficultySelectionForm.ShowDialog() == DialogResult.OK)
+            {
+                int size = difficultySelectionForm.SelectedSize;
+                GameDifficulty difficulty = difficultySelectionForm.SelectedDifficulty;
+                EngineUI engineUI = new EngineUI(size, difficulty);
+                Application.Run(engineUI);
+            }
         }
     }
 }
