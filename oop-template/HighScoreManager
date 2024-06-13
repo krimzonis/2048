@@ -30,4 +30,32 @@ namespace oop_template
             highScores = highScores.OrderByDescending(x => x.Value).ToList();
             SaveHighScores(highScores, difficulty);
         }
+        public List<KeyValuePair<string, int>> LoadHighScores(GameDifficulty difficulty)
+        {
+            var highScores = new List<KeyValuePair<string, int>>();
+            string filePath = GetFilePath(difficulty);
+
+            if (File.Exists(filePath))
+            {
+                var lines = File.ReadAllLines(filePath);
+                foreach (var line in lines)
+                {
+                    var parts = line.Split('|');
+                    if (parts.Length == 2 && int.TryParse(parts[1], out int score))
+                    {
+                        highScores.Add(new KeyValuePair<string, int>(parts[0], score));
+                    }
+                }
+            }
+
+            return highScores;
+        }
+
+        private void SaveHighScores(List<KeyValuePair<string, int>> highScores, GameDifficulty difficulty)
+        {
+            string filePath = GetFilePath(difficulty);
+            var lines = highScores.Select(x => $"{x.Key}|{x.Value}");
+            File.WriteAllLines(filePath, lines);
+        }
+    }
 }
