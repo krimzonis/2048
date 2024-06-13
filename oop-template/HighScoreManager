@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace oop_template
+{
+    public class HighScoreManager
+    {
+        private const string EasyFilePath = "highscores_easy.txt";
+        private const string MediumFilePath = "highscores_medium.txt";
+        private const string HardFilePath = "highscores_hard.txt";
+
+        private string GetFilePath(GameDifficulty difficulty)
+        {
+            switch (difficulty)
+            {
+                case GameDifficulty.Lako: return EasyFilePath;
+                case GameDifficulty.Srednje: return MediumFilePath;
+                case GameDifficulty.Tesko: return HardFilePath;
+                default: throw new ArgumentOutOfRangeException(nameof(difficulty), difficulty, null);
+            }
+        }
+
+        public void SaveHighScore(string playerName, int score, GameDifficulty difficulty)
+        {
+            var highScores = LoadHighScores(difficulty);
+            highScores.Add(new KeyValuePair<string, int>(playerName, score));
+            highScores = highScores.OrderByDescending(x => x.Value).ToList();
+            SaveHighScores(highScores, difficulty);
+        }
+}
