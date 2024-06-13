@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Media;
+using System.Text;
+using System.Threading.Tasks;
+using oop_template;
+using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Forms;
 
 namespace oop_template

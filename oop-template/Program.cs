@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
+using oop_template;
 
-namespace oop_template
+namespace _2048
 {
     public static class Program
     {

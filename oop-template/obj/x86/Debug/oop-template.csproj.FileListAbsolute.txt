@@ -1,0 +1,9 @@
+C:\Users\Korisnik\2048\oop-template\obj\x86\Debug\oop-template.csproj.AssemblyReference.cache
+C:\Users\Korisnik\2048\oop-template\obj\x86\Debug\oop_template.Properties.Resources.resources
+C:\Users\Korisnik\2048\oop-template\obj\x86\Debug\oop-template.csproj.GenerateResource.cache
+C:\Users\Korisnik\2048\oop-template\obj\x86\Debug\oop-template.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\2048\oop-template\bin\Debug\oop-template.exe.config
+C:\Users\Korisnik\2048\oop-template\bin\Debug\oop-template.exe
+C:\Users\Korisnik\2048\oop-template\bin\Debug\oop-template.pdb
+C:\Users\Korisnik\2048\oop-template\obj\x86\Debug\oop-template.exe
+C:\Users\Korisnik\2048\oop-template\obj\x86\Debug\oop-template.pdb

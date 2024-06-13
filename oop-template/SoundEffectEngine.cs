@@ -14,8 +14,8 @@ namespace oop_template
 
         public SoundEffectEngine()
         {
-            _moveSound = new SoundPlayer("whoosh.wav");
-            _mergeSound = new SoundPlayer("pop.wav"); 
+            _moveSound = new SoundPlayer("C:\\Users\\Korisnik\\2048\\oop-template\\whoosh.wav");
+            _mergeSound = new SoundPlayer("C:\\Users\\Korisnik\\2048\\oop-template\\pop.wav");
         }
 
         public void PlayMoveSound()
@@ -28,6 +28,4 @@ namespace oop_template
             _mergeSound.Play();
         }
     }
-
-    
 }

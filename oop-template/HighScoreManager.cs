@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Windows.Forms;
 
 namespace oop_template
 {
@@ -30,6 +32,7 @@ namespace oop_template
             highScores = highScores.OrderByDescending(x => x.Value).ToList();
             SaveHighScores(highScores, difficulty);
         }
+
         public List<KeyValuePair<string, int>> LoadHighScores(GameDifficulty difficulty)
         {
             var highScores = new List<KeyValuePair<string, int>>();

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using System.Windows.Forms;
 
 namespace oop_template
 {
@@ -118,10 +121,10 @@ namespace oop_template
 
         private void ShowGameOver()
         {
-            string playerName = Microsoft.VisualBasic.Interaction.InputBox("Game Over! Napisi ime da bi ti se uneo highscore:");
+            string playerName = Interaction.InputBox("Game Over! Enter your name for the high score:");
             _engine.SaveHighScore(playerName, _difficulty);
             _highScoreManager.DisplayLeaderboard(_difficulty);
-            DialogResult result = MessageBox.Show("Zelis li zapoceti novu igru?", "Game Over", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you want to start a new game?", "Game Over", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 ChooseDifficulty();
@@ -147,7 +150,7 @@ namespace oop_template
         {
             _size = size;
             _difficulty = difficulty;
-            Controls.Remove(_tableLayoutPanel);
+            Controls.Remove(_tableLayoutPanel); // Remove the old table
             _engine = new Engine(_size);
             _labels = new Label[_size, _size];
             InitializeUI();
