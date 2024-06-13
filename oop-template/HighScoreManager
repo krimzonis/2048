@@ -57,5 +57,16 @@ namespace oop_template
             var lines = highScores.Select(x => $"{x.Key}|{x.Value}");
             File.WriteAllLines(filePath, lines);
         }
+
+        public void DisplayLeaderboard(GameDifficulty difficulty)
+        {
+            var highScores = LoadHighScores(difficulty);
+            string leaderboard = $"Leaderboard ({difficulty}):\n";
+            foreach (var highScore in highScores)
+            {
+                leaderboard += $"{highScore.Key}: {highScore.Value}\n";
+            }
+            MessageBox.Show(leaderboard, "Leaderboard");
+        }
     }
 }
